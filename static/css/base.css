@@ -1,0 +1,81 @@
+body {
+	font-family: monospace;
+	font-size: 20px;
+
+	background-color:black;
+	color:white;
+}
+
+a {
+	color: blueviolet;
+
+	transition-duration: 0.3s;
+}
+
+a:hover {
+	color: teal;
+
+	transition-duration: 0.3s;
+}
+
+/* -------------------------- HEADER -------------------------------- */
+
+#header  {
+	background-color: teal;
+	height: 40pt;
+	margin-bottom: 50pt;
+
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.navlinkbutton {
+	padding-left: 10pt;
+	padding-right: 10pt;
+	padding-top: 5pt;
+	padding-bottom: 5pt;
+	margin: 5pt;
+
+	background-color: blueviolet;
+	color: black;
+
+	text-decoration: none;
+	font-weight: bold;
+
+	transition-duration: 0.3s;
+}
+
+.navlinkbutton a{
+	text-decoration: none;
+	font-weight: bold;
+
+	transition-duration: 0.3s;
+}
+
+.navlinkbutton:hover {
+	/*background-color: teal;*/
+	text-decoration: underline;
+
+	color: black;
+
+	transition-duration: 0.3s;
+}
+
+/* -------------------------- CONTENT ------------------------------- */
+
+#content {
+	width: 100%;
+}
+
+/* -------------------------- FOOTER -------------------------------- */
+
+#footer  {
+	background-color: teal;
+	height: 40pt;
+	margin-top: 50pt;
+
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}

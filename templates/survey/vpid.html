@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="centertext">
+	<form action="run_exp" method="post">
+		{% csrf_token %}
+
+		<input name="vpid">
+
+		<input name="exp_name" value="{{exp_name}}" style="display:none;">
+		<input name="page" value="0" style="display:none;">
+		<input value="Weiter" type="submit">
+	</form>
+</div>
+
+{% endblock %}

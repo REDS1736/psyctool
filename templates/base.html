@@ -1,0 +1,50 @@
+{% load static %}
+{% static 'css' as cssUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{{cssUrl}}/base.css">
+	<link rel="stylesheet" href="{{cssUrl}}/elements.css">
+	<link rel="stylesheet" href="{{cssUrl}}/items.css">
+	<title>Document</title>
+</head>
+<body>
+	
+	{% block header %}
+	<div id="header">
+		<div class="navlinkbutton" onclick="window.location.href='/survey'">
+			Survey
+		</div>
+		<div class="navlinkbutton" onclick="window.location.href='/settings'">
+			Settings
+		</div>
+	</div>
+	{% endblock %}
+
+	<div style="display:flex; justify-content:center; align-items:center;">
+		<div id='content'>
+			{% block content %}
+			<p>
+				{missing block in base.html: content}
+			</p>
+			{% endblock %}
+		</div>
+	</div>
+
+	{% block footer %}
+	<div id="footer">
+		<div class="navlinkbutton" onclick="window.location.href=''">
+			Datenschutz
+		</div>
+		<div class="navlinkbutton" onclick="window.location.href=''">
+			Impressum
+		</div>
+		<div class="navlinkbutton" onclick="window.location.href=''">
+			AGBs
+		</div>
+	</div>
+	{% endblock %}
+
+</body>
+</html>

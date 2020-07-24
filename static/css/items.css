@@ -1,0 +1,103 @@
+/* -------------------------- GENERAL ------------------------------- */
+#item_container {
+	margin-left: auto;
+	margin-right: auto;
+	
+	width: 80%;
+}
+
+.item {
+	width: 100%;
+	
+	border: 1px solid teal;
+
+	margin: 5pt;
+	padding: 5pt;
+}
+
+.item table {
+	width: 100%;
+
+	text-align: left;
+}
+
+.item table tr {
+	text-align: left;
+}
+
+.item table td {
+	width: 50%;
+}
+
+/* -------------------------- DISPLAY ------------------------------- */
+
+/* ---------------- INFOTEXT -------------------- */
+.infotext {
+	font-style: italic;
+	word-wrap: normal;
+}
+
+/* -------------------------- INPUT --------------------------------- */
+
+/* ---------------- QUESTION_TEXT --------------- */
+.question_text {
+	width: 100%;
+	resize: vertical;
+
+	color: white;
+	background-color: black;
+	border: 1px solid teal;
+
+	transition-duration: 0.3s;
+	transition-property: border;
+}
+
+.question_text:hover {
+	border: 1px solid blueviolet;
+
+	transition-duration: 0.3s;
+	transition-property: border, color;
+}
+
+/* ---------------- QUESTION_SLIDER ------------- */
+/* background */
+.question_slider {
+	appearance: none;
+	-webkit-appearance: none;
+	outline: none;
+	opacity: 0.7;
+
+	height: 10pt;
+	width: 100%;
+
+	background-color: teal;
+	border: none;
+
+	transition-duration: 0.3s;
+}
+
+.question_slider:hover {
+	opacity: 1;
+
+	transition-duration: 0.3s;
+}
+
+/* thumb */
+.question_slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+
+	width: 5pt;
+	height: 15pt;
+	cursor: pointer;
+	background: blueviolet;
+	border: none;
+  }
+  
+  .question_slider::-moz-range-thumb {
+	width: 5pt;
+	height: 15pt;
+	cursor: pointer;
+	background: blueviolet;
+	border: none;
+  }

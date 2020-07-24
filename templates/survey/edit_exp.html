@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+{% static 'js' as jsUrl %}
+
+<div id='pages_miniview'></div>
+
+<div id='editonepage_container'></div>
+
+<div id='edititem_container'></div>
+
+<div id='basics_sidebar'>
+	<button id='btn_saveconfig' onclick='save_config()'>Speichern</button>
+</div>
+
+<!-- ------------------------ SCRIPTS ------------------------------- -->
+<script src="{{jsUrl}}/edit_exp.js"></script>
+<script src="{{jsUrl}}/he-js/he.js"></script>
+
+<!-- ------------------------ TRANSPORT ----------------------------- -->
+<script type="text/javascript">
+	var transporter_config = he.decode('{{config}}').replaceAll("'", '"');
+
+	// utility for transporter_config
+	function replaceAll(str, old, rep) {
+		while(str.includes(old)) {
+			str = str.replace(old, rep);
+		}
+		return str;
+	}
+</script>
+
+<!-- ------------------------ TEMPLATES ----------------------------- -->
+<template id='t_onepage_miniview'>
+	<div class='onepage_miniview' id='mini_{missingtitle}' onclick="gotopage()">
+		{missing title}
+	</div>
+</template>
+
+<template id='t_editonepage'>
+	<div class='editonepage' id='eop_{missingtitle}'>
+	
+		<div class='additem_container'>
+			<div class='editonepage_additem'>+<span class='editonepage_additem_hovertext'> Item hinzufügen</span></div>
+			<div class='editonepage_additem_dropdown'>
+				<div class='editonepage_additem_itemtype' onclick='additem("infotext")'>infotext</div>
+				<div class='editonepage_additem_itemtype' onclick='additem("question_text")'>question: text</div>
+				<div class='editonepage_additem_itemtype' onclick='additem("question_slider")'>question: slider</div>
+			</div>
+		</div>
+
+	</div>
+</template>
+
+<template id='t_editonepage_item'>
+	<div class='editonepage_item'
+		 id="i_{missingid}"
+		 ondrop="drop(event)" ondragover="allowDrop(event)"
+		 draggable="true" ondragstart="drag(event)">
+		<!-- id is inserted here by js -->
+		<div class='editonepage_deleteitem' onclick="deleteitem()">
+			X
+		</div>
+			
+		<div class='additem_container'>
+			<div class='editonepage_additem'>+<span class='editonepage_additem_hovertext'> Item hinzufügen</span></div>
+			<div class='editonepage_additem_dropdown'>
+				<div class='editonepage_additem_itemtype' onclick='additem("infotext")'>infotext</div>
+				<div class='editonepage_additem_itemtype' onclick='additem("question_text")'>question: text</div>
+				<div class='editonepage_additem_itemtype' onclick='additem("question_slider")'>question: slider</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+{% endblock %}

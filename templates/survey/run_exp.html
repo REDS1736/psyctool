@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+{% static 'js' as jsUrl %}
+<div class="centertext">
+	<form action="run_exp" method="post">
+		{% csrf_token %}
+
+		<div id="item_container">
+
+		</div>
+
+		<input name="exp_name" value="{{exp_name}}" style="display:none;">
+		<input name="vpid" value="{{vpid}}" style="display:none;">
+		<input name="page" value="{page}" id="input_nextpage" style="display:none;">
+		<input value="Weiter" type="submit">
+	</form>
+</div>
+
+<!-- ------------------------ SCRIPTS ------------------------------- -->
+<script src="{{jsUrl}}/run_exp.js"></script>
+<script src="{{jsUrl}}/he-js/he.js"></script>
+
+<!-- ------------------------ TRANSPORT ----------------------------- -->
+<script type="text/javascript">
+	var transporter_exp_name = '{{exp_name}}';
+	var transporter_page = '{{page}}';
+	var transporter_config = he.decode('{{config}}').replaceAll("'", '"');  // only the json for this one page
+
+	// utility for transporter_config
+	function replaceAll(str, old, rep) {
+		while(str.includes(old)) {
+			str = str.replace(old, rep);
+		}
+		return str;
+	}
+</script>
+
+
+<template id="t_question_text">
+	<div class="question_text">
+		<div class="question_text_q">
+			{question_text}
+		</div>
+		<div class="question_text_a">
+			{question_answer}
+		</div>
+	</div>
+</template>
+
+<template id="t_question_slider">
+	<div>
+		{question_slider}
+	</div>
+</template>
+
+{% endblock %}

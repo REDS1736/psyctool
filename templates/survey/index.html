@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="centertext">
+	<p>
+		Deine Experimente(<a href="create">Experiment erstellen</a>):
+	</p>
+	<p>
+		<div class="card_container">
+			{% for e in experiments %}
+			<div class="exp_card" onclick="window.location.href='vpid?exp_name={{e.name}}'">
+				<span>
+					{{e.name}}<br>
+					(<a href="edit_exp?exp_name={{e.name}}">bearbeiten</a>)
+				</span>
+			</div>
+			{% endfor %}
+		</div>
+	</p>
+	<p>
+		Uwu <i>uzzles my head into your chest. Then I begin pushing my head harder into your abdomen. It begins to hurt. I pull my head back and throw it at your chest, slamming it into your ribcage. You try to move but you’re in pain. I slam again and again. Your ribs begin breaking. I keep hitting until your lungs begin collapsing. You gasp for air as I throw one last head bash directly into your heart, completely destroying it. My love is now pouring out of your ears and eyes.</i><br>
+		“I wove you!!!”<br>
+		OwO
+	</p>
+	<a href="data">Daten</a>
+</div>
+{% endblock %}

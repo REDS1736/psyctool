@@ -1,0 +1,166 @@
+/* text in this div is centered vertically */
+.centertext {
+	text-align: center;
+}
+
+/* ---------------------------------------------- index.html -------------------------------------- */
+.card_container {
+	display: inline-block;
+}
+
+/* nice card for experiments */
+.exp_card {
+	width: 120pt;
+	float: left;
+	height: 100pt;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	margin: 5pt;
+	background-color: teal;
+	cursor: pointer;
+
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+/* ---------------------------------------------- edit_exp.html ----------------------------------- */
+
+/* ---------------- miniview -------------------- */
+#pages_miniview {
+	float: left;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 100%;
+
+	width: 128pt;
+
+	border: 1px solid green;
+}
+
+.onepage_miniview {
+	width: 90pt;
+	padding-top: 20pt;
+	padding-bottom: 20pt;
+	padding-left: 10pt;
+	padding-right: 10pt;
+	margin-bottom: 10pt;
+
+	white-space: nowrap;
+	word-wrap: none;
+	text-overflow: ellipsis;
+	overflow: hidden;
+
+	background-color: teal;
+
+	cursor: pointer;
+}
+
+/* ---------------- editonepage ----------------- */
+#editonepage_container {
+	width: 300pt;
+	margin-left: 20pt;
+	float: left;
+
+	border: 1px solid red;
+}
+
+.editonepage {
+	display: none; /* only one page is visible at a time */
+}
+
+.editonepage_item {
+	float: left;
+	background-color: teal;
+	width: 100%;
+
+	cursor: move;
+}
+
+.editonepage_deleteitem {
+	float: right;
+
+	padding-left: 5pt;
+	padding-right: 5pt;
+
+	background-color: crimson;
+
+	cursor: pointer;
+}
+
+/* add item */
+.additem_container {
+	display:inline-block;
+	justify-content:center;
+	align-items:center;
+	width: 100%;
+	
+	background-color: black;
+	color: teal;
+
+	cursor: pointer;
+	transition-duration: 0.3s;
+}
+
+.editonepage_additem {
+	text-align: left;
+
+	width: 100%;
+}
+
+.editonepage_additem_hovertext {
+	visibility: hidden;
+}
+
+.additem_container:hover .editonepage_additem_hovertext {
+	visibility: visible;
+}
+
+.additem_container:hover .editonepage_additem_dropdown{
+	display: block;
+}
+
+.editonepage_additem_dropdown {
+	display: none;
+	position: absolute;
+	z-index: 1;
+
+	background-color: teal;
+	color: white;
+}
+
+.editonepage_additem_itemtype {
+	opacity: 0.5;
+}
+
+.editonepage_additem_itemtype:hover {
+	opacity: 1;
+}
+
+/* ---------------- edititem -------------------- */
+#edititem_container {
+	width: 200pt;
+	float: left;
+
+	border: 1px solid blue;
+}
+
+/* ---------------- basics_sidebar -------------- */
+#basics_sidebar {
+	width: 200pt;
+	float: right;
+
+	border: 1px solid blue;
+}
+
+#btn_saveconfig {
+	background-color: teal;
+	border: none;
+	border-radius: 5pt;
+
+	height: 30pt;
+	width: 70pt;
+}
